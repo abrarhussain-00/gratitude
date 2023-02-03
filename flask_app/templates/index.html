@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Gratitude</title>
+</head>
+
+<body class="background_image_login" style="background-color: black;">
+    <div class="container-sm mt-3">
+        <div>
+            <center>
+                <div class= 'heading'>
+                    <h1>Gratitude</h1>
+                    <br>
+                    <h4>Keeping a journal is a very personal activity and allows you to be present with your own achievements.
+                        Showing gratitude has been proven to reduce anxiety, improve your mood, and provides a way to process
+                        your emotions
+                    </h4>
+                </div>
+            </center>
+        </div>
+        <br>
+        <div class="d-flex justify-content-evenly">
+            <div class="p-4">
+                <h4 class="display-6 text-primary">Register</h4>
+                {% with messages = get_flashed_messages(category_filter=['register']) %}
+                {% if messages %}
+                <div class="bg-danger-subtle text-danger rounded p-1" >
+                    {% for message in messages %}
+                    <p>{{message}}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% endwith %}
+                <form action="/user/register" method="post">
+                    <!-- <label for="first_name">First Name:</label> -->
+                    <input name="first_name" class="form-control" placeholder="First Name">
+                    <!-- <label for="last_name">Last Name:</label> -->
+                    <input name="last_name" class="form-control" placeholder="Last Name">
+                    <!-- <label for="email">Email:</label> -->
+                    <input name="email" class="form-control" placeholder="Email">
+                    <!-- <label for="confirm_pw">Password:</label> -->
+                    <input name="password" class="form-control" type="password" placeholder="Password">
+                    <!-- <label for="confirm_pw">Confirm Password:</label> -->
+                    <input name="confirm_pw" class="form-control" type="password" placeholder="Confirm Password">
+                    <button class="btn btn-primary mt-3">Register</button>
+                </form>
+            </div>
+            <div class="p-4">
+                <h4 class="display-6 text-success">Login</h4>
+                {% with messages = get_flashed_messages(category_filter=['log']) %}
+                {% if messages %}
+                <div class="bg-danger-subtle text-danger text-center rounded">
+                    {% for message in messages %}
+                    <p>{{message}}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% endwith %}
+                <form action="/user/login" method="post">
+                    <!-- <label for="email">Email:</label> -->
+                    <input name="email" class="form-control" placeholder="Email" width="110%">
+                    <!-- <label for="password">Password:</label> -->
+                    <input name="password" class="form-control" type="password" placeholder="Password">
+                    <button class="btn btn-success mt-3">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

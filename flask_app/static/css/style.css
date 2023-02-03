@@ -1,0 +1,96 @@
+body{
+    margin: 5px;
+}
+
+/* body {
+    padding: 25px;
+    background-color: white;
+    color: black;
+    font-size: 25px;
+}
+
+.dark-mode {
+    background-color: black;
+    /* color: white; */
+
+
+input{
+    margin-top: 0.75em;
+}
+
+.seperator{
+    background-color: black;
+}
+
+.background_image_login{
+    background-image: url(https://64.media.tumblr.com/c7d0f6e4b9154169d0adbb890e294e11/tumblr_ne6uf9Uzsp1thk6vpo1_1280.gif);
+    opacity: 0.75;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.heading{
+    color: white;
+}
+
+td{
+    background-color: white;
+    /* border: inset; */
+}
+
+#date{
+    /* width: 20em;
+    height: 5em; */
+    border: 2px solid black;
+    /* border-radius: 50%; */
+    margin-left: 2px;
+    text-align: center;
+}
+
+#motivational_quote{
+    text-align: center;
+}
+
+#container{
+    display: flex;
+    background-color: (87, 166, 190);
+    width: 100%;
+}
+
+#month_name{
+    height: 5em;
+    /* width: 80em; */
+    border: 2px solid black;
+    /* padding: 2em; */
+    text-align: center;
+}
+
+#grateful{
+    border: 2px solid black;
+    height: 50em;
+    text-align: center;
+}
+
+#button_logout{
+    text-align: right;
+}
+
+.background_image_settings{
+    background-image: url(/static/images/admin.jpg);
+    opacity: 0.75;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: scroll;
+    height: 100vh;
+}
+
+.settings_options{
+    width: 50%;
+    height: 50%;
+    background-color: blanchedalmond;
+}
+
+.box_width{
+    border: 2px solid black;
+}

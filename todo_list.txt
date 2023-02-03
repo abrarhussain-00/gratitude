@@ -1,0 +1,80 @@
+Steps To Going Full-Stack
+----------------------------------------------------------------
+-Setting Up MySQL-
+----------------------------------------------------------------
+1. Look at your wireframe. What does our form look like? This should be mimicked in your EERD.
+2. Create an EERD with the necesary tables.
+3. Foward engineer your EERD and makes sure your schema checks out.
+
+----------------------------------------------------------------
+-Setting Up Project Folder-
+----------------------------------------------------------------
+4. Open up VS Code
+5. Create a project folder.
+6. cd into your project folder
+7. install your virtual enviorment and any dependencies needed.
+    ex) python -m pipenv install flask pymysql bcrypt
+8. run your shell. NOTE: If you have successfully entered your virutal enviorment then you should see some form of indication in your teminal. ie: (users_crud-516ojK9m) 
+    ex) python -m pipenv shell
+
+----------------------------------------------------------------
+-Modularizing Project Folder-
+----------------------------------------------------------------
+9. create server.py file in your root project folder
+    ex) from flask_app import app
+        from flask_app.controllers import YOUR_CONTROLLER_GOES_HERE
+
+        if __name__=="__main__":
+            app.run(debug=True)
+
+10. create a flask_app folder in your root project folder
+11. within the flask_app folder create an __init__.py file.
+    ex) from flask import Flask
+        app = Flask(__name__)
+
+12. create the necesary folders within flask_app. config, controllers, models, templates. NOTE: All the folders except config are plural.
+
+----------------------------------------------------------------
+-Config Folder-
+----------------------------------------------------------------
+13. create a mysqlconnection.py in your config folder
+14. paste into that file the necesary files
+
+----------------------------------------------------------------
+-Templates Folder-
+----------------------------------------------------------------
+15. create any necesary html files needed.
+- a page to render all your data
+- a page to create something
+- a page to edit something
+- a page to create only one thing
+
+----------------------------------------------------------------
+-Controllers Folder-
+----------------------------------------------------------------
+16. create a controller filed named after your model. ie) somethings_controller.py. NOTE: This is where your @app.routes exits and they are the middle man between the model and your templates. ALWAYS THINK M->C->V and V->C->M
+    ex) from flask import render_template, request, redirect, session, flash
+        from flask_app import app
+        from flask_app.models.user_model import User
+
+        @app.route('/')
+        def index():
+            return redirect('/users')
+
+----------------------------------------------------------------
+-Models Folder-
+----------------------------------------------------------------
+17. create a file that contains a class and reflects your table in MySQL. Hence, if you have 3 tables then you should have 3 models.
+
+*CRUD QUERY*
+CREATE
+ "INSERT INTO table_name (LIST YOUR COLOUMNS HERE) VALUES (%(THIS SHOULD MATCH YOUR FORM NAME)s);"
+
+READ
+"SELECT * FROM table_name;"
+
+UPDATE
+"UPDATE table_name SET COLUMN_NAM=%{FORM_NAME}s
+
+DELETE
+"DELETE FROM table_name WHERE id=%{id}s"
