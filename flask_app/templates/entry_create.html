@@ -27,9 +27,9 @@
     {% endwith %}
         <div id="container d-flex">
             <div>
-                <div id="month_name"><h1 class='display-6' style="font-family: cursive;">{{current_month_name}} {{current_day}}, {{current_year}}</h1></div>
+                <div id="month_name"><h1 class='display-6' style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">{{current_month_name}} {{current_day}}, {{current_year}}</h1></div>
                 <div id="motivational_quote" class="p-2">
-                    <h3>{{quote['quote_of_day']}}</h3>
+                    <h3 style="font-family:cursive" >{{quote['quote_of_day']}}</h3>
                     <h4>-{{quote['author']}}</h4>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                     <div class="form-group" id="grateful">
                         <div id="button_logout"><button class="btn btn-secondary mt-1"><a href="/logout">Logout</a></button></div>
                         <div>
-                            <h2 class="display-8 text-primary" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"></h2>
+                            <h2 class="display-8 text-primary" style="font-family: cursive"></h2>
                             <textarea name="entry" cols="95" rows="17"  placeholder="(Let your thoughts out...it's ok if you don't know what to write, just type away...)" style= "font-family: 'Itim', cursive ; font-size: 25px; margin-left: 5px; margin-right: 5px; width: 80%;"></textarea>
                         </div>
                         <div><input type="hidden" value="{{quote}}" name= "motivational_quote">
