@@ -52,6 +52,8 @@ If you'd like to contribute to this project, please follow these steps:
 This project is licensed under the MIT License.
 
 ## Demo
+https://github.com/abrarhussain-00/gratitude/assets/117599985/7418eb4a-201e-414e-98ec-6cf8a2a33da4
+
 
 
 
